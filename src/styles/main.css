@@ -1,0 +1,2829 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Vuetify theme CSS variables - using variables from vuetify.ts */
+:root {
+  --v-theme-border-radius-lg: 0.75rem; /* 12px */
+  --v-theme-border-radius-md: 0.5rem; /* 8px */
+  --v-theme-border-radius-sm: 0.375rem; /* 6px */
+  --v-theme-border-radius-xs: 0.25rem; /* 4px */
+  
+  --v-theme-font-size-sm: 0.875rem; /* 14px */
+  --v-theme-font-size-xs: 0.75rem; /* 12px */
+  --v-theme-font-size-base: 1rem; /* 16px */
+  --v-theme-font-size-lg: 1.125rem; /* 18px */
+  --v-theme-font-size-xl: 1.25rem; /* 20px */
+  --v-theme-font-size-2xl: 1.5rem; /* 24px */
+  
+  --v-theme-input-height: 36px;
+  --v-theme-input-padding-y: 8px;
+  --v-theme-input-padding-x: 12px;
+  --v-theme-input-border-color: #D1D5DB;
+  --v-theme-input-focus-border-color: #2196F3;
+  
+  --v-theme-placeholder-color: #9E9E9E;
+  --v-theme-placeholder-opacity: 1;
+  
+  --v-theme-checkbox-size: 16px;
+  --v-theme-checkbox-border-radius: 4px;
+  --v-theme-checkbox-border-color: #D1D5DB;
+  --v-theme-checkbox-checked-bg: #1E88E5;
+  
+  --v-theme-button-padding-y: 8px;
+  --v-theme-button-padding-x: 16px;
+  --v-theme-button-font-size: 14px;
+  --v-theme-button-font-weight: 500;
+  
+  --v-theme-dialog-backdrop-blur: 4px;
+  --v-theme-dialog-backdrop-opacity: 0.5;
+  
+  --v-theme-medium-emphasis-opacity: 1;
+}
+
+.v-input--density-compact {
+  --v-input-padding-top: 7px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #424242;
+  background: #FAFAFA;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Typography - matching React version */
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+h6 {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+/* Mobile typography - уменьшенные размеры заголовков на мобильных устройствах */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.875rem; /* 30px */
+  }
+
+  h2 {
+    font-size: 1.375rem; /* 22px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  h3 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5rem; /* 24px */
+  }
+
+  /* Перекрывающие стили заголовков */
+  .project-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  .client-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  .projects-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  .clients-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  .segments-title {
+    font-size: 1.375rem !important; /* 22px */
+    line-height: 1.75rem !important; /* 28px */
+  }
+
+  .teams-title {
+    font-size: 1.375rem !important; /* 22px */
+    line-height: 1.75rem !important; /* 28px */
+  }
+
+  .client-projects-title,
+  .client-brands-title,
+  .client-members-title {
+    font-size: 1.375rem !important; /* 22px */
+    line-height: 1.75rem !important; /* 28px */
+  }
+
+  .empty-state-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .form-section-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .project-onboarding-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .project-name {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .onboarding-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .project-onboarding-step-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+}
+
+/* Mobile typography - еще более уменьшенные размеры для маленьких экранов */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5rem; /* 24px */
+  }
+
+  h2 {
+    font-size: 1rem; /* 16px */
+    line-height: 1.375rem; /* 22px */
+  }
+
+  h3 {
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.375rem; /* 22px */
+  }
+
+  /* Перекрывающие стили заголовков для маленьких экранов */
+  .project-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .client-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .projects-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .clients-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5rem !important; /* 24px */
+  }
+
+  .segments-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .teams-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .client-projects-title,
+  .client-brands-title,
+  .client-members-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .empty-state-title {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .form-section-title {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .project-onboarding-title {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .project-name {
+    font-size: 0.9375rem !important; /* 15px */
+    line-height: 1.375rem !important; /* 22px */
+  }
+
+  .onboarding-title {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.25rem !important; /* 20px */
+  }
+
+  .project-onboarding-step-title {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.25rem !important; /* 20px */
+  }
+}
+
+/* Large screen typography - увеличенные размеры для больших экранов */
+@media (min-width: 1281px) {
+  body {
+    font-size: 16px; /* увеличение с 14px до 16px */
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 36px - увеличение с 30px */
+    line-height: 2.75rem; /* 44px */
+  }
+
+  h2 {
+    font-size: 2.375rem; /* 38px - увеличение с 32px */
+    line-height: 2.5rem; /* 40px */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 24px - увеличение с 20px */
+    line-height: 2rem; /* 32px */
+  }
+
+  h4 {
+    font-size: 1.375rem; /* 22px - увеличение с 18px */
+    line-height: 1.875rem; /* 30px */
+  }
+
+  h5 {
+    font-size: 1.125rem; /* 18px - увеличение с 16px */
+    line-height: 1.75rem; /* 28px */
+  }
+
+  h6 {
+    font-size: 1rem; /* 16px - увеличение с 14px */
+    line-height: 1.5rem; /* 24px */
+  }
+
+  /* Перекрывающие стили заголовков для больших экранов */
+  .project-title {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 2.75rem !important; /* 44px */
+  }
+
+  .client-title {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 2.75rem !important; /* 44px */
+  }
+
+  .projects-title {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 2.75rem !important; /* 44px */
+  }
+
+  .clients-title {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 2.75rem !important; /* 44px */
+  }
+
+  .segments-title {
+    font-size: 2.375rem !important; /* 38px */
+    line-height: 2.5rem !important; /* 40px */
+  }
+
+  .teams-title {
+    font-size: 2.375rem !important; /* 38px */
+    line-height: 2.5rem !important; /* 40px */
+  }
+
+  .client-projects-title,
+  .client-brands-title,
+  .client-members-title {
+    font-size: 2.375rem !important; /* 38px */
+    line-height: 2.5rem !important; /* 40px */
+  }
+
+  .empty-state-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important; /* 32px */
+  }
+
+  .form-section-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important; /* 32px */
+  }
+
+  .project-onboarding-title {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important; /* 32px */
+  }
+
+  .project-name {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 2rem !important; /* 32px */
+  }
+
+  .onboarding-title {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  .project-onboarding-step-title {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.875rem !important; /* 30px */
+  }
+
+  /* Увеличение размеров текста в карточках и таблицах */
+  .segments-table-th,
+  .segments-table-td,
+  .client-card-content,
+  .project-card-content {
+    font-size: 15px !important; /* увеличение с 14px */
+  }
+
+  /* Увеличение размеров для меток и подписей */
+  .v-theme--dinnovate .form-label,
+  .v-theme--dinnovate .v-dialog .v-text-field .v-label,
+  .segments-card-label,
+  .client-stat-text {
+    font-size: 13px !important; /* увеличение с 12px */
+  }
+
+  /* Увеличение размеров для списка проектов */
+  .project-name {
+    font-size: 22px !important; /* увеличение с 20px */
+  }
+
+  .project-badge,
+  .project-warning-badge {
+    font-size: 11px !important; /* увеличение с 10px */
+    padding: 5px 12px !important; /* увеличение padding */
+  }
+
+  .project-label {
+    font-size: 13px !important; /* увеличение с 12px */
+  }
+
+  .project-value {
+    font-size: 15px !important; /* увеличение с 14px */
+  }
+
+  .project-budget {
+    font-size: 15px !important; /* увеличение с 14px */
+  }
+
+  .project-tag {
+    font-size: 13px !important; /* увеличение с 12px */
+    padding: 3px 8px !important; /* увеличение padding */
+  }
+
+  .project-tag-count {
+    font-size: 13px !important; /* увеличение с 12px */
+  }
+
+  .project-empty {
+    font-size: 13px !important; /* увеличение с 12px */
+  }
+
+  .project-segment {
+    font-size: 13px !important; /* увеличение с 12px */
+    padding: 7px 14px !important; /* увеличение padding */
+  }
+
+  .segment-name,
+  .segment-value,
+  .segment-budget,
+  .segment-count {
+    font-size: 13px !important; /* увеличение с 12px */
+  }
+
+  .onboarding-title {
+    font-size: 15px !important; /* увеличение с 14px */
+  }
+
+  .onboarding-description {
+    font-size: 15px !important; /* увеличение с 14px */
+  }
+
+  .empty-state-title {
+    font-size: 1.5rem !important; /* 24px - уже есть в стилях заголовков */
+  }
+
+  .empty-state-text {
+    font-size: 15px !important; /* увеличение базового размера */
+  }
+}
+
+/* Custom utility classes */
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Border radius utilities */
+.rounded-xl {
+  border-radius: 0.75rem; /* 12px */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
+}
+
+.rounded-md {
+  border-radius: 0.375rem; /* 6px */
+}
+
+/* Shadow utilities - matching React version */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacing utilities */
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+/* VBtn styles for Dinnovate theme - using CSS variables and defaults from vuetify.ts */
+.v-theme--dinnovate .v-btn,
+.v-theme--dinnovate button.v-btn,
+.dinnovate-btn {
+  border-radius: var(--v-theme-button-border-radius, 0.75rem) !important;
+}
+
+.v-theme--dinnovate .v-btn--variant-elevated,
+.v-theme--dinnovate .v-btn--variant-flat,
+.v-theme--dinnovate .v-btn--variant-outlined,
+.v-theme--dinnovate .v-btn--variant-text,
+.v-theme--dinnovate .v-btn--variant-tonal,
+.dinnovate-btn.v-btn--variant-elevated,
+.dinnovate-btn.v-btn--variant-flat,
+.dinnovate-btn.v-btn--variant-outlined,
+.dinnovate-btn.v-btn--variant-text,
+.dinnovate-btn.v-btn--variant-tonal {
+  border-radius: var(--v-theme-button-border-radius, 0.75rem) !important;
+}
+
+/* VSelect styles for Dinnovate theme - matching React version */
+/* Apply border directly to field, hide outline to avoid double border */
+.v-theme--dinnovate .v-select .v-field,
+.v-theme--dinnovate .v-select.v-input .v-field,
+.dinnovate-select .v-field,
+.custom-select .v-field {
+  background-color: #FFFFFF !important;
+  box-shadow: none !important;
+  border: 1px solid var(--v-theme-input-border-color, #D1D5DB) !important;
+  border-radius: var(--v-theme-input-border-radius, 0.75rem) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: var(--v-theme-input-height, 36px) !important;
+  height: var(--v-theme-input-height, 36px) !important;
+}
+
+/* Hide Vuetify's default outline structure to avoid double border */
+.v-theme--dinnovate .v-select .v-field__outline,
+.v-theme--dinnovate .v-select.v-input .v-field__outline,
+.dinnovate-select .v-field__outline,
+.custom-select .v-field__outline {
+  display: none !important;
+}
+
+.v-theme--dinnovate .v-select .v-field__outline__start,
+.v-theme--dinnovate .v-select .v-field__outline__end,
+.v-theme--dinnovate .v-select.v-input .v-field__outline__start,
+.v-theme--dinnovate .v-select.v-input .v-field__outline__end,
+.dinnovate-select .v-field__outline__start,
+.dinnovate-select .v-field__outline__end,
+.custom-select .v-field__outline__start,
+.custom-select .v-field__outline__end {
+  display: none !important;
+}
+
+.v-theme--dinnovate .v-select .v-field__outline__notch,
+.v-theme--dinnovate .v-select.v-input .v-field__outline__notch,
+.dinnovate-select .v-field__outline__notch,
+.custom-select .v-field__outline__notch {
+  display: none !important;
+}
+
+/* Select field wrapper - remove padding to avoid conflicts */
+.v-theme--dinnovate .v-select .v-field__field,
+.v-theme--dinnovate .v-select.v-input .v-field__field,
+.dinnovate-select .v-field__field,
+.custom-select .v-field__field {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: var(--v-theme-input-height, 36px) !important;
+  height: var(--v-theme-input-height, 36px) !important;
+  border-radius: var(--v-theme-input-border-radius, 0.75rem) !important;
+}
+
+.v-theme--dinnovate .v-select .v-field__input,
+.v-theme--dinnovate .v-select.v-input .v-field__input,
+.dinnovate-select .v-field__input,
+.custom-select .v-field__input {
+  border-radius: var(--v-theme-input-border-radius, 0.75rem) !important;
+  width: 100% !important;
+}
+
+/* Focus state - using CSS variables */
+.v-theme--dinnovate .v-select.v-field--focused .v-field,
+.v-theme--dinnovate .v-select.v-field--focused,
+.dinnovate-select.v-field--focused .v-field,
+.custom-select.v-field--focused .v-field {
+  border-color: var(--v-theme-input-focus-border-color, #2196F3) !important;
+  box-shadow: 0 0 0 1px var(--v-theme-input-focus-border-color, #2196F3) !important;
+}
+
+/* Select input styles - using CSS variables */
+.v-theme--dinnovate .v-select .v-field__input,
+.dinnovate-select .v-field__input {
+  font-size: var(--v-theme-input-font-size, 14px);
+  color: #424242 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  min-height: var(--v-theme-input-height, 36px);
+}
+
+.v-theme--dinnovate .v-select .v-field__input input {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+/* Disabled select styles - matching React version (disabled:bg-gray-50 disabled:text-gray-500) */
+.v-theme--dinnovate .v-select.v-input--disabled .v-field,
+.v-theme--dinnovate .v-select.v-input--disabled .v-field__field {
+  background-color: #F9FAFB !important; /* bg-gray-50 */
+}
+
+.v-theme--dinnovate .v-select.v-input--disabled .v-field__input,
+.v-theme--dinnovate .v-select.v-input--disabled .v-field__input input,
+.v-theme--dinnovate .v-select.v-input--disabled .v-select__selection,
+.v-theme--dinnovate .v-select.v-input--disabled .v-select__selection-text {
+  color: #6B7280 !important; /* text-gray-500 */
+}
+
+/* Disabled select border color */
+.v-theme--dinnovate .v-select.v-input--disabled .v-field,
+.dinnovate-select.v-input--disabled .v-field,
+.custom-select.v-input--disabled .v-field {
+  border-color: #E5E7EB !important; /* border-gray-200 for disabled state */
+}
+
+/* Also style the dropdown arrow for disabled selects */
+.v-theme--dinnovate .v-select.v-input--disabled .v-field__append-inner,
+.v-theme--dinnovate .v-select.v-input--disabled .v-field__append-inner * {
+  color: #6B7280 !important; /* text-gray-500 */
+}
+
+.v-theme--dinnovate .v-select .v-select__selection {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+.v-theme--dinnovate .v-select .v-select__selection-text {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+/* Placeholder styles - using CSS variables from theme */
+.v-theme--dinnovate .v-select .v-field__input input::placeholder {
+  color: var(--v-theme-placeholder-color, #9E9E9E);
+  opacity: var(--v-theme-placeholder-opacity, 1);
+}
+
+.v-theme--dinnovate .v-select .v-field__append-inner {
+  padding-right: 12px;
+}
+
+/* VSelect menu styles - compact dropdown */
+.v-theme--dinnovate .v-select .v-menu__content,
+.v-theme--dinnovate .v-select .v-select__content,
+.v-theme--dinnovate .v-overlay__content.v-select__content {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  margin-top: 4px;
+  background-color: #FFFFFF;
+  width: max-content !important;
+  min-width: 0;
+}
+
+/* Global border-radius for all dialogs and overlays in dinnovate theme */
+/* But exclude menu content to avoid conflicts */
+.v-theme--dinnovate .v-dialog .v-overlay__content,
+.v-theme--dinnovate.v-dialog .v-overlay__content {
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .v-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate.v-dialog .v-overlay__content > .v-card {
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .v-select .v-list,
+.v-select__content .v-list,
+.select-compact-list {
+  padding: 2px !important;
+}
+
+/* Compact list items - v-select dropdown (portaled) and filter selects */
+.v-theme--dinnovate .v-select .v-list-item,
+.v-theme--dinnovate .v-overlay__content.v-select__content .v-list-item,
+.v-overlay__content.v-select__content .v-list-item,
+.select-compact-list .v-list-item {
+  min-height: 28px !important;
+  height: auto !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  border-radius: 4px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Override Vuetify density/one-line min-height for select dropdown */
+.v-overlay__content.v-select__content .v-list-item.v-list-item--density-compact,
+.v-overlay__content.v-select__content .v-list-item.v-list-item--one-line,
+.select-compact-list .v-list-item.v-list-item--density-compact,
+.select-compact-list .v-list-item.v-list-item--one-line {
+  min-height: 28px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  padding-inline: 12px !important;
+}
+
+.select-compact-list .v-list-item__content,
+.v-overlay__content.v-select__content .v-list-item__content {
+  padding: 0 !important;
+}
+
+.v-theme--dinnovate .v-select .v-list-item:hover {
+  background-color: #F5F5F5;
+}
+
+.v-theme--dinnovate .v-select .v-list-item--active {
+  background-color: #E3F2FD;
+  color: #1976d2;
+}
+
+.v-theme--dinnovate .v-select .select-item-check {
+  color: #1976d2 !important;
+}
+
+.v-theme--dinnovate .v-select .v-list-item-title,
+.v-overlay__content.v-select__content .v-list-item-title {
+  font-size: 12px !important;
+}
+
+/* Text colors for all components in Dinnovate theme - matching React version */
+.v-theme--dinnovate {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+.v-theme--dinnovate .v-field__input,
+.v-theme--dinnovate .v-field__input input,
+.v-theme--dinnovate .v-text-field input,
+.v-theme--dinnovate .v-select .v-select__selection,
+.v-theme--dinnovate .v-select .v-select__selection-text {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+.v-theme--dinnovate .v-list-item-title,
+.v-theme--dinnovate .v-list-item-subtitle {
+  color: #424242 !important; /* text-gray-800 */
+}
+
+/* Project card sheet styles - перенесено из .project-card */
+.v-theme--dinnovate .project-card-sheet {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgb(238, 238, 238) !important;
+  transition: all 0.2s !important;
+  padding: 20px !important;
+}
+
+.v-theme--dinnovate .project-card-sheet:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.v-theme--dinnovate .project-card-sheet.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.v-theme--dinnovate .client-card-sheet:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.v-theme--dinnovate .client-card-sheet.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Client project card sheet styles - аналогично project-card-sheet */
+.v-theme--dinnovate .client-project-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+  transition: box-shadow 0.2s !important;
+  padding: 16px !important;
+}
+
+.v-theme--dinnovate .client-project-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.v-theme--dinnovate .client-project-card.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Client brand card sheet styles */
+.v-theme--dinnovate .client-brand-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: box-shadow 0.2s !important;
+  padding: 20px !important;
+}
+
+.v-theme--dinnovate .client-brand-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.v-theme--dinnovate .client-brand-card.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Client member card sheet styles */
+.v-theme--dinnovate .client-member-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  padding: 12px !important;
+}
+
+/* Search input styles - matching ProjectsList */
+.v-theme--dinnovate .search-wrapper {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 200px;
+  max-width: none;
+}
+
+.v-theme--dinnovate .search-input-wrapper,
+.v-theme--dinnovate .v-card .search-input-wrapper,
+.v-theme--dinnovate .v-menu .search-input-wrapper {
+  position: relative;
+  padding: 8px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+  .v-theme--dinnovate .search-icon,
+  .v-theme--dinnovate .search-input-wrapper .search-icon,
+  .v-theme--dinnovate .v-card .search-icon,
+  .v-theme--dinnovate .v-menu .search-icon {
+    position: absolute;
+    left: 12px !important; /* увеличение с 8px для больших экранов */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9E9E9E;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+.v-theme--dinnovate .search-input,
+.v-theme--dinnovate .search-input-wrapper .search-input,
+.v-theme--dinnovate .v-card .search-input,
+.v-theme--dinnovate .v-menu .search-input {
+  width: 100%;
+  padding: 6px 12px 6px 32px !important;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.v-theme--dinnovate .search-input:focus {
+  border-color: #2196F3 !important;
+  box-shadow: inset 0 0 0 1px #2196F3 !important;
+}
+
+/* Form input styles - matching search-input */
+.v-theme--dinnovate .form-input {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.75rem !important;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.v-theme--dinnovate .form-input:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 1px #2196F3;
+}
+
+.v-theme--dinnovate .form-input::placeholder {
+  color: #9E9E9E;
+  opacity: 1;
+  font-size: 14px;
+}
+
+/* Date input / datepicker - theme styling */
+.v-theme--dinnovate input[type="date"],
+.v-theme--dinnovate .form-input[type="date"],
+.v-theme--dinnovate .v-dialog input[type="date"] {
+  color: #424242;
+  color-scheme: light;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.v-theme--dinnovate input[type="date"]::-webkit-calendar-picker-indicator,
+.v-theme--dinnovate .form-input[type="date"]::-webkit-calendar-picker-indicator,
+.v-theme--dinnovate .v-dialog input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 4px;
+  margin-left: 0;
+}
+
+.v-theme--dinnovate input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.v-theme--dinnovate .form-input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.v-theme--dinnovate .v-dialog input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.85;
+}
+
+/* Firefox - accent color for date picker (highlight, selected date) */
+.v-theme--dinnovate input[type="date"],
+.v-theme--dinnovate .form-input[type="date"],
+.v-theme--dinnovate .v-dialog input[type="date"] {
+  accent-color: #1e88e5;
+}
+
+/* Vuetify v-date-picker - theme styling (rounded, fonts, colors, compact) */
+/* Reset padding from project-card-sheet (VSheet default) - date picker must not inherit it */
+.v-theme--dinnovate .v-date-picker.theme-date-picker.project-card-sheet,
+.v-theme--dinnovate .theme-date-picker.v-date-picker.project-card-sheet,
+.v-theme--dinnovate .v-date-picker.theme-date-picker.v-sheet,
+.v-overlay__content .v-date-picker.theme-date-picker.project-card-sheet,
+.v-overlay__content .v-date-picker.theme-date-picker.v-sheet {
+  padding: 0 !important;
+}
+
+.v-theme--dinnovate .v-date-picker.theme-date-picker,
+.v-theme--dinnovate .theme-date-picker.v-date-picker,
+.v-overlay__content .v-date-picker.theme-date-picker {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  width: 268px !important;
+}
+
+.v-theme--dinnovate .v-date-picker.theme-date-picker.v-picker,
+.v-overlay__content .v-date-picker.theme-date-picker.v-picker {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06) !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-picker__body,
+.v-overlay__content .theme-date-picker .v-picker__body {
+  padding: 0 !important;
+}
+
+/* Compact - controls (month/year row) */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-controls,
+.v-overlay__content .theme-date-picker .v-date-picker-controls {
+  height: 36px !important;
+  padding: 2px 4px !important;
+  min-height: 36px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-controls .v-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-controls .v-btn {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important;
+  color: #424242 !important;
+  min-height: 26px !important;
+  padding: 0 4px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-controls .v-btn:hover,
+.v-overlay__content .theme-date-picker .v-date-picker-controls .v-btn:hover {
+  color: #1e88e5 !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-controls .v-date-picker-controls__only-month-btn,
+.v-theme--dinnovate .theme-date-picker .v-date-picker-controls .v-date-picker-controls__only-year-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-controls .v-date-picker-controls__only-month-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-controls .v-date-picker-controls__only-year-btn {
+  min-width: 28px !important;
+  padding-inline: 4px !important;
+}
+
+/* Compact - month grid, minimal padding especially left */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month,
+.v-overlay__content .theme-date-picker .v-date-picker-month {
+  padding: 0 4px 6px !important;
+  justify-content: flex-start !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__weeks,
+.v-overlay__content .theme-date-picker .v-date-picker-month__weeks {
+  column-gap: 2px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__days,
+.v-overlay__content .theme-date-picker .v-date-picker-month__days {
+  padding: 0 10px;
+  column-gap: 2px !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  grid-template-columns: repeat(7, 32px) !important;
+}
+
+/* Compact - day cells: 7×32 + 6×2 = 236px fits in 268-8=260 */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__day,
+.v-overlay__content .theme-date-picker .v-date-picker-month__day {
+  height: 32px !important;
+  width: 32px !important;
+  min-height: 32px !important;
+  min-width: 32px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__day .v-btn.v-date-picker-month__day-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-month__day .v-btn.v-date-picker-month__day-btn {
+  --v-btn-height: 26px !important;
+  --v-btn-size: 12px !important;
+  border-radius: 6px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important;
+}
+
+/* Selected day - primary color */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__day--selected .v-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-month__day--selected .v-btn {
+  background-color: #1e88e5 !important;
+  color: #ffffff !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__day--selected .v-btn:hover,
+.v-overlay__content .theme-date-picker .v-date-picker-month__day--selected .v-btn:hover {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+}
+
+/* Weekday headers */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-month__weekday,
+.v-overlay__content .theme-date-picker .v-date-picker-month__weekday {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 11px !important;
+  color: #757575 !important;
+  height: 28px !important;
+  min-height: 28px !important;
+}
+
+/* Year/month picker buttons */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-years .v-btn,
+.v-theme--dinnovate .theme-date-picker .v-date-picker-months .v-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-years .v-btn,
+.v-overlay__content .theme-date-picker .v-date-picker-months .v-btn {
+  border-radius: 6px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 12px !important;
+  min-height: 28px !important;
+  padding: 4px 8px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-years .v-btn--active,
+.v-theme--dinnovate .theme-date-picker .v-date-picker-months .v-btn--active,
+.v-overlay__content .theme-date-picker .v-date-picker-years .v-btn--active,
+.v-overlay__content .theme-date-picker .v-date-picker-months .v-btn--active {
+  background-color: #1e88e5 !important;
+  color: #ffffff !important;
+}
+
+/* Compact - years/months content */
+.v-theme--dinnovate .theme-date-picker .v-date-picker-years__content,
+.v-theme--dinnovate .theme-date-picker .v-date-picker-months__content,
+.v-overlay__content .theme-date-picker .v-date-picker-years__content,
+.v-overlay__content .theme-date-picker .v-date-picker-months__content {
+  padding: 4px !important;
+}
+
+.v-theme--dinnovate .theme-date-picker .v-date-picker-months .v-date-picker-months__content,
+.v-overlay__content .theme-date-picker .v-date-picker-months .v-date-picker-months__content {
+  gap: 4px !important;
+}
+
+/* Form structure styles - matching AddProjectModal */
+.v-theme--dinnovate .add-project-form,
+.v-theme--dinnovate .v-dialog .add-project-form,
+.v-theme--dinnovate.v-dialog .add-project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.v-theme--dinnovate .form-field,
+.v-theme--dinnovate .v-dialog .form-field,
+.v-theme--dinnovate.v-dialog .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.v-theme--dinnovate .form-label,
+.v-theme--dinnovate .v-dialog .form-label,
+.v-theme--dinnovate.v-dialog .form-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0;
+}
+
+.v-theme--dinnovate .form-actions,
+.v-theme--dinnovate .v-dialog .form-actions,
+.v-theme--dinnovate.v-dialog .form-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+  width: 100%;
+}
+
+/* Form buttons */
+.v-theme--dinnovate .form-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 0.75rem !important;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.v-theme--dinnovate .form-btn-cancel {
+  background-color: #FFFFFF;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+  box-shadow: none;
+}
+
+.v-theme--dinnovate .form-btn-cancel:hover {
+  background-color: #F9FAFB;
+}
+
+.v-theme--dinnovate .form-btn-submit {
+  background-color: #1E88E5;
+  color: #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.v-theme--dinnovate .form-btn-submit:hover:not(:disabled) {
+  background-color: #1976D2;
+}
+
+.v-theme--dinnovate .form-btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Apply form button styles to all v-btn in dialogs - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-btn--variant-outlined,
+.v-theme--dinnovate.v-dialog .v-btn--variant-outlined,
+.v-theme--dinnovate .v-dialog .v-btn.v-btn--variant-outlined,
+.v-theme--dinnovate.v-dialog .v-btn.v-btn--variant-outlined,
+.v-theme--dinnovate .dinnovate-btn.v-btn--variant-outlined {
+  background-color: #FFFFFF !important;
+  color: #374151 !important;
+  border: 1px solid var(--v-theme-input-border-color, #D1D5DB) !important;
+  box-shadow: none !important;
+  font-size: var(--v-theme-button-font-size, 14px) !important;
+  font-weight: var(--v-theme-button-font-weight, 500) !important;
+  padding: var(--v-theme-button-padding-y, 8px) var(--v-theme-button-padding-x, 16px) !important;
+  min-height: auto !important;
+  height: auto !important;
+  border-radius: var(--v-theme-button-border-radius, 0.75rem) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  line-height: 1.5 !important;
+}
+
+.v-theme--dinnovate .v-dialog .v-btn--variant-outlined:hover,
+.v-theme--dinnovate.v-dialog .v-btn--variant-outlined:hover,
+.v-theme--dinnovate .v-dialog .v-btn.v-btn--variant-outlined:hover,
+.v-theme--dinnovate.v-dialog .v-btn.v-btn--variant-outlined:hover {
+  background-color: #F9FAFB !important; /* hover:bg-gray-50 matching React version */
+}
+
+/* Primary button styles - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-btn--variant-flat.v-btn--color-primary,
+.v-theme--dinnovate.v-dialog .v-btn--variant-flat.v-btn--color-primary,
+.v-theme--dinnovate .v-dialog .v-btn[color="primary"]:not(.v-btn--variant-outlined),
+.v-theme--dinnovate.v-dialog .v-btn[color="primary"]:not(.v-btn--variant-outlined),
+.v-theme--dinnovate .v-dialog .v-btn.v-btn--variant-flat.v-btn--color-primary,
+.v-theme--dinnovate.v-dialog .v-btn.v-btn--variant-flat.v-btn--color-primary,
+.v-theme--dinnovate .dinnovate-btn[color="primary"]:not(.v-btn--variant-outlined) {
+  background-color: #1E88E5 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  font-size: var(--v-theme-button-font-size, 14px) !important;
+  font-weight: var(--v-theme-button-font-weight, 500) !important;
+  padding: var(--v-theme-button-padding-y, 8px) var(--v-theme-button-padding-x, 16px) !important;
+  min-height: auto !important;
+  height: auto !important;
+  border-radius: var(--v-theme-button-border-radius, 0.75rem) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  line-height: 1.5 !important;
+  border: none !important;
+}
+
+.v-theme--dinnovate .v-dialog .v-btn--variant-flat.v-btn--color-primary:hover:not(:disabled),
+.v-theme--dinnovate.v-dialog .v-btn--variant-flat.v-btn--color-primary:hover:not(:disabled),
+.v-theme--dinnovate .v-dialog .v-btn[color="primary"]:not(.v-btn--variant-outlined):hover:not(:disabled),
+.v-theme--dinnovate.v-dialog .v-btn[color="primary"]:not(.v-btn--variant-outlined):hover:not(:disabled),
+.v-theme--dinnovate .v-dialog .v-btn.v-btn--variant-flat.v-btn--color-primary:hover:not(:disabled),
+.v-theme--dinnovate.v-dialog .v-btn.v-btn--variant-flat.v-btn--color-primary:hover:not(:disabled) {
+  background-color: #1976D2 !important; /* hover:bg-primary-700 matching React version */
+}
+
+.v-theme--dinnovate .v-dialog .v-btn:disabled,
+.v-theme--dinnovate.v-dialog .v-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* Apply form input styles to all v-text-field in dialogs - matching AddClientModal pattern */
+/* Override Vuetify CSS variable for text fields in dialogs - using theme variable */
+.v-theme--dinnovate .v-dialog .v-text-field,
+.v-theme--dinnovate.v-dialog .v-text-field,
+.v-theme--dinnovate .dinnovate-text-field {
+  --v-medium-emphasis-opacity: var(--v-theme-medium-emphasis-opacity, 1) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Field wrapper - apply border directly to field, hide outline - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field,
+.v-theme--dinnovate .dinnovate-text-field .v-field {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid var(--v-theme-input-border-color, #D1D5DB) !important;
+  border-radius: var(--v-theme-border-radius-lg, 0.75rem) !important;
+  min-height: var(--v-theme-input-height, 36px) !important;
+  height: var(--v-theme-input-height, 36px) !important;
+}
+
+/* Remove all padding from field wrapper elements */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__field,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__field {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 36px !important;
+  height: 36px !important;
+}
+
+/* Hide Vuetify's default outline structure to avoid double border */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__outline,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__outline {
+  display: none !important;
+}
+
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__outline__start,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__outline__start,
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__outline__notch,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__outline__notch,
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__outline__end,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__outline__end {
+  display: none !important;
+}
+
+/* Focus state - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field--focused,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field--focused,
+.v-theme--dinnovate .dinnovate-text-field .v-field--focused {
+  border-color: var(--v-theme-input-focus-border-color, #2196F3) !important;
+  box-shadow: 0 0 0 1px var(--v-theme-input-focus-border-color, #2196F3) !important;
+}
+
+
+/* Input element styles - using CSS variables from theme */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__input input,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__input input,
+.v-theme--dinnovate .dinnovate-text-field .v-field__input input {
+  width: 100% !important;
+  margin: 0 !important;
+  background-color: #FFFFFF !important;
+  border: none !important;
+  border-radius: var(--v-theme-border-radius-lg, 0.75rem) !important;
+  font-size: var(--v-theme-font-size-sm, 14px) !important;
+  color: #424242 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  outline: none !important;
+  transition: all 0.2s !important;
+  box-sizing: border-box !important;
+  line-height: 1.5 !important;
+}
+
+
+/* Ensure input wrapper doesn't constrain width or add padding */
+.v-theme--dinnovate .v-dialog .v-text-field .v-field__input,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field__input {
+  width: 100% !important;
+}
+
+
+/* Placeholder styles - match select placeholder exactly (same approach) - using CSS variables */
+.v-theme--dinnovate .v-text-field .v-field__input input::placeholder {
+  color: var(--v-theme-placeholder-color, #9E9E9E);
+  opacity: var(--v-theme-placeholder-opacity, 1);
+}
+
+/* Checkbox styles in dialogs - matching React version */
+.v-theme--dinnovate .v-dialog .v-checkbox,
+.v-theme--dinnovate.v-dialog .v-checkbox {
+  margin: 0 !important;
+}
+
+/* Checkbox selection control wrapper */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control {
+  min-height: auto !important;
+}
+
+/* Checkbox input wrapper */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control__input,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control__input {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+}
+
+/* Checkbox box styling - matching React input[type="checkbox"] */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control__wrapper,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control__wrapper {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+}
+
+/* Checkbox button (the actual checkbox box) - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn,
+.v-theme--dinnovate .dinnovate-checkbox .v-checkbox-btn {
+  width: var(--v-theme-checkbox-size, 16px) !important;
+  height: var(--v-theme-checkbox-size, 16px) !important;
+  min-width: var(--v-theme-checkbox-size, 16px) !important;
+  min-height: var(--v-theme-checkbox-size, 16px) !important;
+  border: 1px solid var(--v-theme-checkbox-border-color, #D1D5DB) !important;
+  border-radius: var(--v-theme-checkbox-border-radius, 4px) !important;
+  background-color: #FFFFFF !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: all 0.2s !important;
+}
+
+/* Remove any default Vuetify borders/outlines that create double border */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn::before,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn::before,
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn::after,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn::after {
+  display: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any border from wrapper elements that might create double border */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control__wrapper,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control__wrapper {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove border from overlay elements */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn__overlay,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn__overlay {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove any box-shadow from all checkbox-related elements */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control,
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control__input,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control__input {
+  box-shadow: none !important;
+}
+
+/* Checkbox checked state - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn--selected,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn--selected,
+.v-theme--dinnovate .v-dialog .v-checkbox.v-checkbox--selected .v-checkbox-btn,
+.v-theme--dinnovate.v-dialog .v-checkbox.v-checkbox--selected .v-checkbox-btn,
+.v-theme--dinnovate .dinnovate-checkbox .v-checkbox-btn--selected {
+  background-color: var(--v-theme-checkbox-checked-bg, #1E88E5) !important;
+  border-color: var(--v-theme-checkbox-checked-bg, #1E88E5) !important;
+  color: #FFFFFF !important;
+}
+
+/* Checkbox icon (checkmark) - ensure it's white when selected */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn__overlay,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn__overlay,
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn--selected .v-icon,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn--selected .v-icon {
+  color: #FFFFFF !important;
+}
+
+/* Checkbox focus state - only show ring on focus, no shadow */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn:focus-visible,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn:focus-visible,
+.v-theme--dinnovate .v-dialog .v-checkbox .v-selection-control__input:focus-visible ~ .v-selection-control__wrapper .v-checkbox-btn,
+.v-theme--dinnovate.v-dialog .v-checkbox .v-selection-control__input:focus-visible ~ .v-selection-control__wrapper .v-checkbox-btn {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.5) !important; /* focus:ring-primary-500 focus:ring-2 */
+}
+
+/* Remove shadow when not focused */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn:not(:focus-visible),
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn:not(:focus-visible) {
+  box-shadow: none !important;
+}
+
+/* Checkbox hover state */
+.v-theme--dinnovate .v-dialog .v-checkbox .v-checkbox-btn:hover:not(.v-checkbox-btn--selected),
+.v-theme--dinnovate.v-dialog .v-checkbox .v-checkbox-btn:hover:not(.v-checkbox-btn--selected) {
+  border-color: #1E88E5 !important;
+}
+
+
+/* Label styles - using CSS variables and defaults from vuetify.ts */
+.v-theme--dinnovate .v-dialog .v-text-field .v-label,
+.v-theme--dinnovate.v-dialog .v-text-field .v-label,
+.v-theme--dinnovate .v-dialog .v-text-field .v-label.v-field-label,
+.v-theme--dinnovate.v-dialog .v-text-field .v-label.v-field-label,
+.v-theme--dinnovate .v-dialog .v-text-field .v-field-label,
+.v-theme--dinnovate.v-dialog .v-text-field .v-field-label,
+.dinnovate-label {
+  font-size: var(--v-theme-font-size-xs, 12px) !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+  margin-bottom: 0px !important;
+  opacity: 1 !important;
+  letter-spacing: unset !important;
+}
+
+/* Hide details */
+.v-theme--dinnovate .v-dialog .v-text-field .v-input__details,
+.v-theme--dinnovate.v-dialog .v-text-field .v-input__details {
+  display: none !important;
+}
+
+/* Form add button */
+.v-theme--dinnovate .form-add-btn {
+  padding: 8px;
+  background-color: #E3F2FD;
+  color: #1E88E5;
+  border: 1px solid #BBDEFB;
+  border-radius: 0.75rem !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-theme--dinnovate .form-add-btn:hover:not(:disabled) {
+  background-color: #BBDEFB;
+}
+
+.v-theme--dinnovate .form-add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add button styles - matching ProjectsList */
+.v-theme--dinnovate .add-project-btn,
+.v-theme--dinnovate .add-segment-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1E88E5 !important;
+  color: #FFFFFF !important;
+  padding: 8px 16px;
+  border-radius: 0.75rem !important; /* 12px */
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 36px;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.v-theme--dinnovate .add-project-btn:hover,
+.v-theme--dinnovate .add-segment-btn:hover {
+  background-color: #1976D2 !important;
+}
+
+/* Filters container - search 2/3, filters 1/3 (divided equally) */
+.v-theme--dinnovate .projects-filters,
+.v-theme--dinnovate .segments-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.v-theme--dinnovate .projects-filters .projects-search,
+.v-theme--dinnovate .segments-filters .segments-search {
+  flex: 1 1 0%;
+  min-width: 120px;
+}
+
+.v-theme--dinnovate .projects-filters-group,
+.v-theme--dinnovate .segments-filters-group {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.v-theme--dinnovate .projects-filters-group .filter-select-client,
+.v-theme--dinnovate .projects-filters-group .filter-select-brand,
+.v-theme--dinnovate .projects-filters-group .filter-select-year,
+.v-theme--dinnovate .segments-filters-group .filter-select-team,
+.v-theme--dinnovate .segments-filters-group .filter-select-media {
+  flex: 1 1 0%;
+  min-width: 100px;
+}
+
+.v-theme--dinnovate .filter-select-client,
+.v-theme--dinnovate .filter-select-brand,
+.v-theme--dinnovate .filter-select-year,
+.v-theme--dinnovate .filter-select-team,
+.v-theme--dinnovate .filter-select-media {
+  flex: 1 1 auto;
+  min-width: 100px;
+}
+
+/* Projects and segments filter selects use flex layout (2/3 search, 1/3 filters) */
+
+/* Селект «Добавить участника» на плашке команды — border-radius 8px только здесь */
+.v-theme--dinnovate .team-card .team-member-select .v-field,
+.v-theme--dinnovate .team-card .team-member-select .v-field__field,
+.v-theme--dinnovate .team-card .team-member-select .v-field__input,
+.v-theme--dinnovate .team-card .team-member-select.v-select .v-field__input,
+.v-theme--dinnovate .team-card .team-member-select.custom-select .v-field__input {
+  border-radius: 8px !important;
+}
+
+/* VCard styles - prevent dark hover overlay */
+.v-theme--dinnovate .v-card {
+  position: relative;
+}
+
+.v-theme--dinnovate .v-card:hover {
+  background-color: inherit !important;
+}
+
+.v-theme--dinnovate .v-card:hover .v-card-text,
+.v-theme--dinnovate .v-card:hover .v-card-title,
+.v-theme--dinnovate .v-card:hover .v-card-subtitle {
+  color: inherit !important;
+}
+
+/* Set default letter-spacing for v-card-text in dinnovate theme to prevent double application */
+.v-theme--dinnovate .v-card-text {
+  letter-spacing: unset !important;
+}
+
+.v-theme--dinnovate .v-card__overlay {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.v-theme--dinnovate .v-card__underlay {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.v-theme--dinnovate .v-card:hover .v-card__overlay,
+.v-theme--dinnovate .v-card:active .v-card__overlay,
+.v-theme--dinnovate .v-card:focus .v-card__overlay {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.v-theme--dinnovate .v-card:hover .v-card__underlay,
+.v-theme--dinnovate .v-card:active .v-card__underlay,
+.v-theme--dinnovate .v-card:focus .v-card__underlay {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.v-theme--dinnovate .v-ripple__container {
+  display: none !important;
+}
+
+.v-theme--dinnovate .v-card .v-ripple__container {
+  display: none !important;
+}
+
+/* Modal Dialog Styles - using CSS variables */
+.v-theme--dinnovate .v-overlay__scrim {
+  background-color: rgba(0, 0, 0, var(--v-theme-dialog-backdrop-opacity, 0.5)) !important;
+  backdrop-filter: blur(var(--v-theme-dialog-backdrop-blur, 4px)) !important;
+  -webkit-backdrop-filter: blur(var(--v-theme-dialog-backdrop-blur, 4px)) !important;
+}
+
+/* Apply backdrop blur to overlay itself as well - matching React version */
+.v-theme--dinnovate.v-overlay {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  transition: none !important;
+  backdrop-filter: blur(4px) !important; /* backdrop-blur-sm - matching React version */
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+.v-theme--dinnovate.v-overlay:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.v-theme--dinnovate .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.v-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.v-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+  overflow: hidden !important;
+}
+
+/* Border radius for all dialogs - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-overlay__content,
+.v-theme--dinnovate.v-dialog .v-overlay__content,
+.v-theme--dinnovate .dinnovate-dialog-content,
+.v-theme--dinnovate .dinnovate-dialog-content .v-overlay__content {
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+  overflow: hidden !important;
+}
+
+/* Border radius for all cards inside dialogs - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate.v-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate .v-dialog .v-overlay__content .v-card,
+.v-theme--dinnovate .dinnovate-dialog-content .v-card {
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+  overflow: hidden !important;
+}
+
+/* Remove backdrop blur for v-menu (selects, dropdowns) - v-menu overlay has .v-menu class */
+.v-theme--dinnovate.v-overlay.v-menu .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.v-menu .v-overlay__backdrop,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-menu .v-overlay__scrim {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.v-theme--dinnovate.v-overlay.v-menu,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-menu {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Remove backdrop blur for v-tooltip - tooltips should not blur the background */
+.v-theme--dinnovate.v-overlay.v-tooltip .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.v-tooltip .v-overlay__backdrop,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-tooltip .v-overlay__scrim {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background-color: transparent !important;
+}
+
+.v-theme--dinnovate.v-overlay.v-tooltip,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-tooltip {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Border radius for all menus - using CSS variables */
+.v-theme--dinnovate .v-menu .v-overlay__content,
+.v-theme--dinnovate.v-menu .v-overlay__content,
+.v-theme--dinnovate .dinnovate-menu-content,
+.v-theme--dinnovate .dinnovate-menu-content .v-overlay__content {
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+}
+
+/* Border radius for all overlays - using CSS variables */
+.v-theme--dinnovate .v-overlay__content:not(.v-tooltip__content) {
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+}
+
+/* Ensure all dialog cards have border-radius - using CSS variables */
+.v-theme--dinnovate .v-dialog .v-card,
+.v-theme--dinnovate.v-dialog .v-card,
+.dinnovate-dialog-content .v-card {
+  border-radius: var(--v-theme-dialog-border-radius, 0.75rem) !important;
+}
+
+.v-theme--dinnovate.v-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-project-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-project-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.add-project-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+/* Fix for scrollable dialog - white background */
+.v-theme--dinnovate.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.v-dialog--scrollable > .v-overlay__content > .v-card > .v-card-text,
+.v-theme--dinnovate.v-dialog--scrollable > .v-overlay__content > form > .v-card > .v-card-text,
+.v-theme--dinnovate.v-dialog > .v-overlay__content > .v-card > .v-card-text,
+.v-theme--dinnovate.v-dialog > .v-overlay__content > form > .v-card > .v-card-text {
+  background-color: #FFFFFF !important;
+}
+
+.v-theme--dinnovate.add-project-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.add-project-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+/* Ensure overlay content doesn't clip rounded corners */
+.v-theme--dinnovate.add-project-dialog .v-overlay__content,
+.v-theme--dinnovate .add-project-dialog .v-overlay__content {
+  overflow: visible !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+/* Apply border-radius to the v-card itself, not children */
+.v-theme--dinnovate .add-project-dialog .v-card,
+.v-theme--dinnovate.add-project-dialog .v-card,
+.v-theme--dinnovate.add-project-dialog.v-dialog--scrollable > .v-overlay__content > .v-card,
+.v-theme--dinnovate .add-project-dialog.v-dialog--scrollable > .v-overlay__content > .v-card,
+.v-theme--dinnovate .add-project-card,
+.v-theme--dinnovate .add-project-card.v-card,
+.v-theme--dinnovate.add-project-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate .add-project-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+  border-bottom-left-radius: 0.75rem !important;
+  border-bottom-right-radius: 0.75rem !important;
+}
+
+/* Override all rounded classes for add-project-card */
+.v-theme--dinnovate .add-project-card,
+.v-theme--dinnovate .add-project-card.v-card,
+.v-theme--dinnovate .add-project-card.v-card.rounded-lg,
+.v-theme--dinnovate .add-project-card.v-card.rounded-0,
+.v-theme--dinnovate .add-project-dialog .add-project-card,
+.v-theme--dinnovate.add-project-dialog .add-project-card,
+.v-theme--dinnovate .add-project-card.v-card.rounded-lg,
+.v-theme--dinnovate .add-project-card.v-card[style*="border-radius"],
+.v-theme--dinnovate .add-project-card[style*="border-radius"],
+.v-theme--dinnovate .v-card.add-project-card,
+.v-theme--dinnovate .v-card.add-project-card.rounded-0 {
+  border-radius: 0.75rem !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+  border-bottom-left-radius: 0.75rem !important;
+  border-bottom-right-radius: 0.75rem !important;
+}
+
+/* Override Vuetify rounded-lg and rounded-0 classes */
+.v-theme--dinnovate .add-project-card.rounded-lg,
+.v-theme--dinnovate .add-project-card.rounded-0 {
+  border-radius: 0.75rem !important;
+}
+
+
+/* Prevent dark hover effects on all dialog cards */
+.v-theme--dinnovate .v-dialog .v-card:hover,
+.v-theme--dinnovate.v-dialog .v-card:hover,
+.v-theme--dinnovate .add-project-dialog .v-card:hover {
+  background-color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .v-dialog .v-card:hover .v-card__overlay,
+.v-theme--dinnovate .v-dialog .v-card:hover .v-card__underlay,
+.v-theme--dinnovate.v-dialog .v-card:hover .v-card__overlay,
+.v-theme--dinnovate.v-dialog .v-card:hover .v-card__underlay,
+.v-theme--dinnovate .add-project-dialog .v-card:hover .v-card__overlay,
+.v-theme--dinnovate .add-project-dialog .v-card:hover .v-card__underlay {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+}
+
+.v-theme--dinnovate .v-dialog .v-card,
+.v-theme--dinnovate .v-dialog .v-card:hover,
+.v-theme--dinnovate .v-dialog .v-card:active,
+.v-theme--dinnovate .v-dialog .v-card:focus,
+.v-theme--dinnovate.v-dialog .v-card,
+.v-theme--dinnovate.v-dialog .v-card:hover,
+.v-theme--dinnovate.v-dialog .v-card:active,
+.v-theme--dinnovate.v-dialog .v-card:focus,
+.v-theme--dinnovate .add-project-dialog .v-card,
+.v-theme--dinnovate .add-project-dialog .v-card:hover,
+.v-theme--dinnovate .add-project-dialog .v-card:active,
+.v-theme--dinnovate .add-project-dialog .v-card:focus {
+  opacity: 1 !important;
+}
+
+
+/* Ensure selects inside all dialogs work correctly - apply to all modals */
+.v-theme--dinnovate .v-dialog .custom-select,
+.v-theme--dinnovate .v-dialog .v-select,
+.v-theme--dinnovate.v-dialog .custom-select,
+.v-theme--dinnovate.v-dialog .v-select {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.v-theme--dinnovate .v-dialog .custom-select :deep(.v-input),
+.v-theme--dinnovate .v-dialog .custom-select :deep(.v-input__control),
+.v-theme--dinnovate .v-dialog .custom-select :deep(.v-field),
+.v-theme--dinnovate.v-dialog .custom-select :deep(.v-input),
+.v-theme--dinnovate.v-dialog .custom-select :deep(.v-input__control),
+.v-theme--dinnovate.v-dialog .custom-select :deep(.v-field) {
+  width: 100% !important;
+  min-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.v-theme--dinnovate .v-dialog .form-field .custom-select,
+.v-theme--dinnovate .v-dialog .form-field .v-select,
+.v-theme--dinnovate.v-dialog .form-field .custom-select,
+.v-theme--dinnovate.v-dialog .form-field .v-select {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.v-theme--dinnovate .v-dialog .form-field .custom-select :deep(.v-input),
+.v-theme--dinnovate .v-dialog .form-field .custom-select :deep(.v-input__control),
+.v-theme--dinnovate .v-dialog .form-field .custom-select :deep(.v-field),
+.v-theme--dinnovate .v-dialog .form-field .v-select :deep(.v-input),
+.v-theme--dinnovate .v-dialog .form-field .v-select :deep(.v-input__control),
+.v-theme--dinnovate .v-dialog .form-field .v-select :deep(.v-field),
+.v-theme--dinnovate.v-dialog .form-field .custom-select :deep(.v-input),
+.v-theme--dinnovate.v-dialog .form-field .custom-select :deep(.v-input__control),
+.v-theme--dinnovate.v-dialog .form-field .custom-select :deep(.v-field),
+.v-theme--dinnovate.v-dialog .form-field .v-select :deep(.v-input),
+.v-theme--dinnovate.v-dialog .form-field .v-select :deep(.v-input__control),
+.v-theme--dinnovate.v-dialog .form-field .v-select :deep(.v-field) {
+  width: 100% !important;
+  min-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.v-theme--dinnovate .add-project-header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #FFFFFF !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important;
+  z-index: 1 !important;
+}
+
+/* Dialog title styles - using CSS variables and defaults from vuetify.ts */
+.v-theme--dinnovate .v-dialog .v-card-title,
+.v-theme--dinnovate.v-dialog .v-card-title,
+.v-theme--dinnovate .v-dialog .v-card-title span,
+.v-theme--dinnovate.v-dialog .v-card-title span,
+.v-theme--dinnovate .v-dialog .v-card-title h2,
+.v-theme--dinnovate.v-dialog .v-card-title h2,
+.v-theme--dinnovate .add-project-title,
+.dinnovate-card-title {
+  font-size: var(--v-theme-font-size-2xl, 24px) !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+}
+
+/* Add border-bottom line under dialog title - matching React version (border-b border-gray-200) */
+.v-theme--dinnovate .v-dialog .v-card-title,
+.v-theme--dinnovate.v-dialog .v-card-title {
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 matching React version */
+  padding-bottom: 10px !important; /* py-2.5 = 10px matching React version */
+  padding-top: 10px !important;
+  padding-left: 20px !important; /* px-5 = 20px matching React version */
+  padding-right: 20px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Section title styles - matching React version */
+/* Form section title - using CSS variables */
+.v-theme--dinnovate .form-section-title,
+.v-theme--dinnovate .v-dialog .form-section-title {
+  font-size: var(--v-theme-font-size-xl, 20px) !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 !important;
+}
+
+.v-theme--dinnovate .add-project-close-btn {
+  padding: 6px !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s !important;
+  color: #6B7280 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.v-theme--dinnovate .add-project-close-btn:hover {
+  background-color: #F3F4F6 !important;
+}
+
+.v-theme--dinnovate .add-project-content {
+  padding: 12px 20px !important;
+}
+
+/* Add Segment Modal Styles - matching React version */
+.v-theme--dinnovate.add-segment-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-segment-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 672px !important; /* max-w-2xl = 672px */
+}
+
+.v-theme--dinnovate.add-segment-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-segment-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.add-segment-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .add-segment-card,
+.v-theme--dinnovate .add-segment-card.v-card,
+.v-theme--dinnovate.add-segment-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate .add-segment-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .add-segment-header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #FFFFFF !important;
+  padding: 10px 20px !important; /* px-5 py-2.5 = 20px 10px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+}
+
+.v-theme--dinnovate .add-segment-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+}
+
+.v-theme--dinnovate .add-segment-close-btn {
+  padding: 6px !important; /* p-1.5 = 6px */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 8px !important; /* rounded-lg */
+  transition: background-color 0.2s !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.v-theme--dinnovate .add-segment-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .add-segment-content {
+  padding: 12px 20px !important; /* px-5 py-3 = 20px 12px */
+}
+
+/* Create Confirmation Task Modal Styles - matching React version */
+.v-theme--dinnovate.create-confirmation-task-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+/* Remove backdrop blur for create confirmation task modal - must be after general overlay styles */
+/* Target scrim through parent overlay with our class */
+.v-theme--dinnovate.v-overlay.create-confirmation-task-dialog .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.create-confirmation-task-dialog .v-overlay__backdrop,
+.v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog .v-overlay__backdrop,
+.v-overlay-container .v-theme--dinnovate.v-overlay.create-confirmation-task-dialog .v-overlay__scrim,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog .v-overlay__scrim {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Target overlay itself */
+.v-theme--dinnovate.v-overlay.create-confirmation-task-dialog,
+.v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog,
+.v-theme--dinnovate.v-overlay.create-confirmation-task-dialog.v-overlay--active,
+.v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog.v-overlay--active,
+.v-overlay-container .v-theme--dinnovate.v-overlay.create-confirmation-task-dialog,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-dialog.create-confirmation-task-dialog {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.v-theme--dinnovate.create-confirmation-task-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 512px !important; /* max-w-lg = 512px */
+}
+
+.v-theme--dinnovate.create-confirmation-task-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.create-confirmation-task-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.create-confirmation-task-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .create-confirmation-task-card,
+.v-theme--dinnovate .create-confirmation-task-card.v-card,
+.v-theme--dinnovate.create-confirmation-task-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate .create-confirmation-task-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .create-confirmation-task-header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #FFFFFF !important;
+  padding: 10px 20px !important; /* px-5 py-2.5 = 20px 10px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .create-confirmation-task-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+}
+
+.v-theme--dinnovate .create-confirmation-task-close-btn {
+  padding: 6px !important; /* p-1.5 = 6px */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 8px !important; /* rounded-lg */
+  transition: background-color 0.2s !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.v-theme--dinnovate .create-confirmation-task-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .create-confirmation-task-content {
+  padding: 12px 20px !important; /* px-5 py-3 = 20px 12px */
+}
+
+/* Create Launch Task Modal Styles - matching Create Confirmation Task / React */
+.v-theme--dinnovate.create-launch-task-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.v-overlay.create-launch-task-dialog .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog .v-overlay__scrim,
+.v-theme--dinnovate.v-overlay.create-launch-task-dialog .v-overlay__backdrop,
+.v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog .v-overlay__backdrop,
+.v-overlay-container .v-theme--dinnovate.v-overlay.create-launch-task-dialog .v-overlay__scrim,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog .v-overlay__scrim {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.v-theme--dinnovate.v-overlay.create-launch-task-dialog,
+.v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog,
+.v-theme--dinnovate.v-overlay.create-launch-task-dialog.v-overlay--active,
+.v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog.v-overlay--active,
+.v-overlay-container .v-theme--dinnovate.v-overlay.create-launch-task-dialog,
+.v-overlay-container .v-theme--dinnovate.v-overlay.v-dialog.create-launch-task-dialog {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.v-theme--dinnovate.create-launch-task-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important;
+  max-width: 700px !important;
+}
+
+.v-theme--dinnovate.create-launch-task-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.create-launch-task-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .create-launch-task-card,
+.v-theme--dinnovate .create-launch-task-card.v-card,
+.v-theme--dinnovate.create-launch-task-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .create-launch-task-header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #FFFFFF !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  border-bottom: 1px solid #E5E7EB !important;
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .create-launch-task-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.v-theme--dinnovate .create-launch-task-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+}
+
+.v-theme--dinnovate .create-launch-task-subtitle {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+  margin: 2px 0 0 !important;
+  line-height: 1.25 !important;
+}
+
+.v-theme--dinnovate .create-launch-task-close-btn {
+  padding: 6px !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s !important;
+  color: #6B7280 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.v-theme--dinnovate .create-launch-task-close-btn:hover {
+  background-color: #F3F4F6 !important;
+}
+
+.v-theme--dinnovate .create-launch-task-content {
+  padding: 12px 20px !important;
+}
+
+/* Upload Media Plan Modal Styles - matching React version */
+.v-theme--dinnovate.upload-media-plan-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.upload-media-plan-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 448px !important; /* max-w-md = 448px */
+}
+
+.v-theme--dinnovate.upload-media-plan-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.upload-media-plan-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.upload-media-plan-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .upload-media-plan-card,
+.v-theme--dinnovate .upload-media-plan-card.v-card,
+.v-theme--dinnovate.upload-media-plan-dialog .v-overlay__content > .v-card,
+.v-theme--dinnovate .upload-media-plan-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .upload-media-plan-header {
+  padding: 16px 24px !important; /* px-6 py-4 = 24px 16px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+}
+
+.v-theme--dinnovate .upload-media-plan-title {
+  font-size: 20px !important; /* text-xl = 1.25rem = 20px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  line-height: 1.5rem !important;
+}
+
+.v-theme--dinnovate .upload-media-plan-close-btn {
+  padding: 8px !important; /* p-2 = 0.5rem = 8px */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 8px !important; /* rounded-lg */
+  transition: background-color 0.2s !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.v-theme--dinnovate .upload-media-plan-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .upload-media-plan-content {
+  padding: 24px !important; /* px-6 py-6 = 24px 24px */
+}
+
+/* Add Brand Modal styles - matching React version */
+.v-theme--dinnovate.add-brand-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-brand-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 448px !important; /* max-w-md = 448px */
+}
+
+.v-theme--dinnovate.add-brand-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-brand-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.add-brand-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .add-brand-card,
+.v-theme--dinnovate .add-brand-card.v-card,
+:.v-theme--dinnovate.add-brand-dialog .v-overlay__content > .v-card,
+:.v-theme--dinnovate .add-brand-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .add-brand-header {
+  padding: 10px 20px !important; /* px-5 py-2.5 = 20px 10px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .add-brand-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  letter-spacing: unset !important;
+}
+
+.v-theme--dinnovate .add-brand-close-btn {
+  padding: 6px !important; /* p-1.5 = 0.375rem = 6px */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0.5rem !important; /* rounded-lg = 8px */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  transition: background-color 0.2s !important;
+}
+
+.v-theme--dinnovate .add-brand-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .add-brand-content {
+  padding: 16px 20px !important; /* px-5 py-4 = 20px 16px */
+}
+
+/* Create Member Modal styles - matching React version */
+.v-theme--dinnovate.create-member-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.create-member-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 448px !important; /* max-w-md = 448px */
+}
+
+.v-theme--dinnovate.create-member-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.create-member-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.create-member-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .create-member-card,
+.v-theme--dinnovate .create-member-card.v-card,
+:.v-theme--dinnovate.create-member-dialog .v-overlay__content > .v-card,
+:.v-theme--dinnovate .create-member-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .create-member-header {
+  padding: 12px 20px !important; /* px-5 py-3 = 20px 12px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .create-member-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  letter-spacing: unset !important;
+}
+
+.v-theme--dinnovate .create-member-close-btn {
+  padding: 6px !important; /* p-1.5 = 0.375rem = 6px */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0.5rem !important; /* rounded-lg = 8px */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  transition: background-color 0.2s !important;
+}
+
+.v-theme--dinnovate .create-member-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .create-member-content {
+  padding: 16px 20px !important; /* px-5 py-4 = 20px 16px */
+}
+
+/* Edit Team Modal styles - matching React version */
+.v-theme--dinnovate.edit-team-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.edit-team-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 448px !important; /* max-w-md = 448px */
+}
+
+.v-theme--dinnovate.edit-team-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.edit-team-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.edit-team-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .edit-team-card,
+.v-theme--dinnovate .edit-team-card.v-card,
+:.v-theme--dinnovate.edit-team-dialog .v-overlay__content > .v-card,
+:.v-theme--dinnovate .edit-team-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .edit-team-header {
+  padding: 12px 20px !important; /* px-5 py-3 = 20px 12px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .edit-team-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  letter-spacing: unset !important;
+}
+
+.v-theme--dinnovate .edit-team-close-btn {
+  padding: 6px !important; /* p-1.5 = 0.375rem = 6px */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0.5rem !important; /* rounded-lg = 8px */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  transition: background-color 0.2s !important;
+}
+
+.v-theme--dinnovate .edit-team-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .edit-team-content {
+  padding: 16px 20px !important; /* px-5 py-4 = 20px 16px */
+}
+
+/* Add Client Modal styles - matching React version */
+.v-theme--dinnovate.add-client-dialog {
+  --v-overlay-opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-client-dialog .v-overlay__content {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+  border-radius: 0.75rem !important; /* 12px */
+  max-width: 448px !important; /* max-w-md = 448px */
+}
+
+.v-theme--dinnovate.add-client-dialog .v-overlay__content:hover {
+  --v-overlay-opacity: 1 !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate.add-client-dialog.v-dialog--scrollable > .v-overlay__content {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate.add-client-dialog.v-dialog--scrollable > .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important; /* 12px */
+}
+
+.v-theme--dinnovate .add-client-card,
+.v-theme--dinnovate .add-client-card.v-card,
+:.v-theme--dinnovate.add-client-dialog .v-overlay__content > .v-card,
+:.v-theme--dinnovate .add-client-dialog .v-overlay__content > .v-card {
+  background-color: #FFFFFF !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  opacity: 1 !important;
+}
+
+.v-theme--dinnovate .add-client-header {
+  padding: 10px 20px !important; /* px-5 py-2.5 = 20px 10px */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #E5E7EB !important; /* border-gray-200 */
+  z-index: 1 !important;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+}
+
+.v-theme--dinnovate .add-client-title {
+  font-size: 18px !important; /* text-lg = 1.125rem = 18px */
+  font-weight: 600 !important; /* font-semibold */
+  color: #111827 !important; /* text-gray-900 */
+  margin: 0 !important;
+  letter-spacing: unset !important;
+}
+
+.v-theme--dinnovate .add-client-close-btn {
+  padding: 6px !important; /* p-1.5 = 0.375rem = 6px */
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0.5rem !important; /* rounded-lg = 8px */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6B7280 !important; /* text-gray-500 */
+  transition: background-color 0.2s !important;
+}
+
+.v-theme--dinnovate .add-client-close-btn:hover {
+  background-color: #F3F4F6 !important; /* hover:bg-gray-100 */
+}
+
+.v-theme--dinnovate .add-client-content {
+  padding: 16px 20px !important; /* px-5 py-4 = 20px 16px */
+}
+
+/* Toggle Switch Styles */
+.v-theme--dinnovate .toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-theme--dinnovate .toggle-label {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.v-theme--dinnovate .toggle-switch {
+  position: relative;
+  display: inline-flex;
+  height: 20px;
+  width: 36px;
+  align-items: center;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+  background-color: #D1D5DB;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.v-theme--dinnovate .toggle-switch-active {
+  background-color: #1E88E5 !important;
+}
+
+.v-theme--dinnovate .toggle-switch-thumb {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  transform: translateX(2px);
+  transition: transform 0.2s;
+}
+
+.v-theme--dinnovate .toggle-switch-active .toggle-switch-thumb {
+  transform: translateX(20px);
+}
+
+/* SearchableSelect and SearchableMultiSelect button alignment and letter-spacing - maximum specificity */
+.searchable-select-btn,
+.searchable-select-btn.v-btn,
+.v-theme--dinnovate .searchable-select-btn,
+.v-theme--dinnovate .searchable-select-btn.v-btn,
+.searchable-select-btn.v-btn--variant-outlined,
+.v-theme--dinnovate .searchable-select-btn.v-btn--variant-outlined {
+  display: flex !important;
+  text-align: left !important;
+  justify-content: space-between !important;
+  letter-spacing: unset !important;
+}
+
+.searchable-select-btn .v-btn__content,
+.searchable-select-btn.v-btn .v-btn__content,
+.v-theme--dinnovate .searchable-select-btn .v-btn__content,
+.v-theme--dinnovate .searchable-select-btn.v-btn .v-btn__content,
+.searchable-select-btn.v-btn--variant-outlined .v-btn__content,
+.v-theme--dinnovate .searchable-select-btn.v-btn--variant-outlined .v-btn__content {
+  grid-area: unset !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  letter-spacing: unset !important;
+  padding: 0 !important;
+}
+
+.searchable-select-text,
+.searchable-select-btn .v-btn__content .searchable-select-text,
+.v-theme--dinnovate .searchable-select-text,
+.v-theme--dinnovate .searchable-select-btn .v-btn__content .searchable-select-text,
+.searchable-select-btn .v-btn__content > span,
+.v-theme--dinnovate .searchable-select-btn .v-btn__content > span {
+  text-align: left !important;
+  letter-spacing: unset !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.searchable-multiselect-btn,
+.searchable-multiselect-btn.v-btn,
+.v-theme--dinnovate .searchable-multiselect-btn,
+.v-theme--dinnovate .searchable-multiselect-btn.v-btn,
+.searchable-multiselect-btn.v-btn--variant-outlined,
+.v-theme--dinnovate .searchable-multiselect-btn.v-btn--variant-outlined {
+  display: flex !important;
+  text-align: left !important;
+  justify-content: space-between !important;
+  letter-spacing: unset !important;
+}
+
+.searchable-multiselect-btn .v-btn__content,
+.searchable-multiselect-btn.v-btn .v-btn__content,
+.v-theme--dinnovate .searchable-multiselect-btn .v-btn__content,
+.v-theme--dinnovate .searchable-multiselect-btn.v-btn .v-btn__content,
+.searchable-multiselect-btn.v-btn--variant-outlined .v-btn__content,
+.v-theme--dinnovate .searchable-multiselect-btn.v-btn--variant-outlined .v-btn__content {
+  grid-area: unset !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  letter-spacing: unset !important;
+  padding: 0 !important;
+}
+
+.searchable-multiselect-text,
+.searchable-multiselect-btn .v-btn__content .searchable-multiselect-text,
+.v-theme--dinnovate .searchable-multiselect-text,
+.v-theme--dinnovate .searchable-multiselect-btn .v-btn__content .searchable-multiselect-text,
+.searchable-multiselect-btn .v-btn__content > span,
+.v-theme--dinnovate .searchable-multiselect-btn .v-btn__content > span {
+  text-align: left !important;
+  letter-spacing: unset !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* SearchableSelect dropdown - selected option (content is portaled, needs global styles) */
+.searchable-select-option.searchable-select-option-selected,
+.v-theme--dinnovate .searchable-select-option.searchable-select-option-selected {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+}
+
+.searchable-select-option-check,
+.v-theme--dinnovate .searchable-select-option-check {
+  color: #1976d2 !important;
+}
